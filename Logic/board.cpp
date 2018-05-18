@@ -22,6 +22,24 @@ Board::Board(int _M,int _N)
     }
 }
 
+Board::Board(Board *_board)
+{
+    int i,j;
+    //M 为x轴长度，N为y轴长度
+    M = _board->getM();
+    N = _board->getN();
+
+    chess_board = new Player_Color*[M];
+    for(i = 0;i < M;i++)
+    {
+        chess_board[i] = new Player_Color[N];
+        for(j = 0;j < N;j++)
+        {
+            chess_board[i][j] = _board->get_color(i,j);
+        }
+    }
+}
+
 Board::~Board()
 {
     int i;
@@ -74,7 +92,7 @@ void Board::print()
             }
             else
             {
-                cout << "N";
+                cout << ".";
             }
         }
         cout << endl;
