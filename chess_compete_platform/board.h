@@ -12,9 +12,12 @@ public:
     Board(Board* _board);
     ~Board();
     Player_Color get_color(int x,int y);
-    Player_Color set_color(int x,int y,Player_Color color);
+    void set_color(int x,int y,Player_Color color);
     int getM(){return M;}
     int getN(){return N;}
+
+    //测试用
+    void print();
 };
 
 #endif // BOARD_H

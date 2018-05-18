@@ -5,8 +5,10 @@
 #include "player_color.h"
 
 class Logic{
-private:
-    Board *board;
+//board在子类中声明这里基类还是只规定接口
+//为了子类访问方便 以及语法的规范性
+//private:
+//    Board *board;
 public:
     Logic();
     virtual ~Logic() = 0;
@@ -15,7 +17,7 @@ public:
     virtual int isVaild(int x,int y,int color);
 
     virtual Player_Color win_tie();
-    //此时x,y要为合法的落子点 传入的ui_board参数是为了维护ui显示的棋盘
+    //此时x,y要为合法的落子点 传入的ui_board参数是为了更新ui显示的棋盘
     virtual void play_chess(int x,int y,Player_Color color,Board* UI_board);
     //若已经结束则true 反之false
     virtual bool isEnd();
