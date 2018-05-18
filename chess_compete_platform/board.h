@@ -9,8 +9,11 @@ private:
     Player_Color** chess_board;
 public:
     Board(int _M,int _N);
+    Board(Board* _board);
     ~Board();
     Player_Color get_color(int x,int y);
+    int getM(){return M;}
+    int getN(){return N;}
 };
 
 #endif // BOARD_H
