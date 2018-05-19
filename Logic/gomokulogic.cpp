@@ -214,7 +214,7 @@ bool GumokuLogic::withdraw(Player_Color color)
         }
         else
         {
-            white_num -=1;
+            white_num -= 1;
         }
     }
     for(i = 0;i < (black_num + white_num);i++)

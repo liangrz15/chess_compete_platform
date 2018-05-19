@@ -10,11 +10,13 @@ TEMPLATE = app
 SOURCES += main.cpp \
     gomokulogic.cpp \
     logic.cpp \
-    board.cpp
+    board.cpp \
+    reversilogic.cpp
 
 HEADERS += \
     board.h \
     gomokulogic.h \
     logic.h \
-    player_color.h
+    player_color.h \
+    reversilogic.h
 
