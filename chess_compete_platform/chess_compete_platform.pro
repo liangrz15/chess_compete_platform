@@ -16,7 +16,8 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     uiinput.cpp \
     uioutput.cpp \
-    gamecontroller.cpp
+    gamecontroller.cpp \
+    humanagent.cpp
 
 HEADERS  += mainwindow.h \
     logic.h \
@@ -26,6 +27,10 @@ HEADERS  += mainwindow.h \
     uiinput.h \
     uioutput.h \
     gamecontroller.h \
-    player_color.h
+    player_color.h \
+    InputPointObserver.h \
+    humanagent.h \
+    NaiveLogic.h \
+    NaiveErrorHandling.h
 
 FORMS    += mainwindow.ui
