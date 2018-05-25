@@ -17,7 +17,6 @@ public:
     virtual void play_chess(int x,int y,Player_Color color) = 0;
     //若已经结束则true 反之false
     virtual bool isEnd() = 0;
-    //保存存档
     virtual void save(QString name) = 0;
     //读取存档 返回下一个下棋者
     virtual Player_Color load(QString name) = 0;
