@@ -12,7 +12,7 @@ public:
     Board(Board* _board);
     ~Board();
     Player_Color get_color(int x,int y);
-    void set_color(int x,int y,Player_Color color);
+    bool set_color(int x,int y,Player_Color color);
     int getM(){return M;}
     int getN(){return N;}
 

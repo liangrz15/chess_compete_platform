@@ -16,7 +16,12 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     uiinput.cpp \
     uioutput.cpp \
-    gamecontroller.cpp
+    gamecontroller.cpp \
+    humanagent.cpp \
+    reversilogic.cpp \
+    gomokulogic.cpp \
+    clickablebutton.cpp \
+    board.cpp
 
 HEADERS  += mainwindow.h \
     logic.h \
@@ -26,6 +31,12 @@ HEADERS  += mainwindow.h \
     uiinput.h \
     uioutput.h \
     gamecontroller.h \
-    player_color.h
+    player_color.h \
+    InputPointObserver.h \
+    humanagent.h \
+    NaiveErrorHandling.h \
+    reversilogic.h \
+    gomokulogic.h \
+    clickablebutton.h
 
 FORMS    += mainwindow.ui
