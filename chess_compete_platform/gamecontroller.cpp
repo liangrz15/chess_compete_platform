@@ -1,9 +1,10 @@
 #include "gamecontroller.h"
 #include"agent.h"
 #include"humanagent.h"
-#include"NaiveLogic.h"
 #include"NaiveErrorHandling.h"
 #include"uiinput.h"
+#include"gomokulogic.h"
+#include"reversilogic.h"
 GameController::GameController(MainWindow* mainWindow)
 {
     this->board = new Board(9,9);
@@ -16,7 +17,7 @@ GameController::GameController(MainWindow* mainWindow)
     Board* board;
     UIOutput* uiOutput;*/
 
-    this->logic = new NaiveLogic;
+    this->logic = new ReversiLogic;
     this->next_player_color = Black;
     this->black_error_handler = new Naive_Error_Handling();
     this->white_error_handler = new Naive_Error_Handling();
@@ -25,6 +26,9 @@ GameController::GameController(MainWindow* mainWindow)
     this->black_agent = new HumanAgent(Black, this, uiInput);
     this->white_agent = new HumanAgent(White, this, uiInput);
     mainWindow->setUIInput(uiInput);
+    mainWindow->generateBoard(8, 8);
+    logic->getBoard(board);
+    this->uiOutput->displayBoard(board);
 
 }
 
@@ -34,7 +38,8 @@ void GameController::receive_input(int x, int y, Player_Color color){
         handler->handle_error(x, y);
         return;
     }
-    logic->play_chess(x, y , board, color);
+    logic->play_chess(x, y , color);
+    logic->getBoard(board);
     this->black_agent->get_opponent_point(x, y, color);
     this->white_agent->get_opponent_point(x, y, color);
     this->uiOutput->displayBoard(board);

@@ -2,10 +2,9 @@
 
 
 void UIOutput::displayBoard(Board* board){
-    int i;
-    for(i = board->getWidth() - 1; i >= 0; i--){
-        if(board->get_color(i, i) == Player_Color::Black)
-            break;
+    for(int i = 0; i < board->getM(); i++){
+        for(int j = 0; j < board->getN(); j++){
+            mainWindow->setColor(i, j, board->get_color(i, j));
+        }
     }
-    mainWindow->test_Display(i, i);
 }
